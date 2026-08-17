@@ -4,164 +4,278 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Ilya Volvovski</title>
-    <link rel="canonical" href="https://www.olvovski.com/" />
+    <link rel="canonical" href="https://www.volvovski.com/" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main>
-      <header>
-        <h1>Ilya Volvovski</h1>
-        <p>
-          <a href="https://github.com/IlyaVolvo">github.com/IlyaVolvo</a>
-        </p>
-        <p class="intro">
-          I spent over 40 years developing software, the last fifteen from 2007 to 2022 on 
-          a distributed storage system.  
-          That work left me with a lasting interest in how large systems
-          fail under rare and hard-to-reproduce conditions. 
-          I now spend most of my time on Faultitude, a source code
-          aware fault injection platform for Java. On the side I build
-          Wordaholic, offline word games around real languages, and Spin Master,
-          software for a table tennis club which I frequently visit and play (hiking doesn't require too much management).
-        </p>
-      </header>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <nav class="site-nav" aria-label="Site">
+          <a href="#about" data-nav="about">About</a>
+          <details class="nav-drop">
+            <summary>Projects</summary>
+            <div class="nav-drop-list">
+              <a href="#faultitude" data-nav="faultitude"
+                ><img class="project-logo" src="logos/faultitude.svg" alt="" />Faultitude</a
+              >
+              <div class="nav-sub">
+                <a href="https://github.com/IlyaVolvo/faultitude-papers/blob/main/why-faultitude.pdf">Why Faultitude</a>
+                <a href="https://github.com/IlyaVolvo/faultitude-papers/blob/main/faultitude-paper.pdf">Paper</a>
+                <a href="https://github.com/IlyaVolvo/faultitude-papers/blob/main/faultitude-white-paper.pdf">White paper</a>
+                <a href="https://github.com/IlyaVolvo/faultitude-papers/blob/main/faultitude-technical-product-brief.pdf">Product brief</a>
+              </div>
+              <a href="#wordaholic" data-nav="wordaholic"
+                ><img class="project-logo" src="logos/wordaholic.svg" alt="" />Wordaholic</a
+              >
+              <a href="#spin-master" data-nav="spin-master"
+                ><img class="project-logo" src="logos/spin-master.svg" alt="" />Spin Master</a
+              >
+            </div>
+          </details>
+          <a href="#contact" data-nav="contact">Contact</a>
+        </nav>
+      </div>
+    </header>
 
-      <section>
-        <h2>Goals</h2>
-        <ul>
-          <li>
-            Get Faultitude in front of people who work on testing and
-            resilience.
-          </li>
-          <li>Keep Wordaholic working, with word lists that hold up.</li>
-          <li>Run Spin Master at a club (or better yet, many clubs)</li>
-        </ul>
+    <main>
+      <section id="about" data-view="about">
+        <h1>About</h1>
+        <p>
+          I live in the wilderness of Columbia River Gorge  not far from Portland. 
+          I retired a little over three years ago  after spending 
+           more than forty years developing backend software system. The last
+          long stretch over 15 years I was involved in the development 
+          of the first commercial distributed storage system using information disparesal algorithsm.
+        </p>
+        <p>
+          I did not stop thinking about software and developing new stuff, it is something I like to think
+          about. And with advancment of the AI tools I have a collaborator who is reliable and honest most of the time.
+          </p>
+          <p>
+          Most days thinking about software I wwas coming back to ideas of ensuring resilience of software systems 
+          that means - the development of Faultitude. 
+        </p>
+        <p>
+          I play table tennis. I hike. Hiking does not need software. The club
+          does. That's how Spin Master was born. 
+        </p>
+        <p>
+          If I choose a profession today, I may consider linguistics. But it is
+          too late, what is not is to implement some that could be played in
+          many languages. To write games with AI help is easy, what is not is to
+          find wordsets for these games. And that it is something I am thinking
+          about as well.
+        </p>
+        <p>
+          I want Faultitude in front of people who work on testing or system
+          developers that could enhance their existing tools and practices. I
+          want Wordaholic to haev more inteesting games and more supported
+          languages. I would like to see Spin Master running at my table tennis
+          club, or at least a few clubs.
+        </p>
       </section>
 
-      <div class="projects" data-tabs>
-        <nav class="tabs" aria-label="Projects">
-          <a href="#faultitude" data-tab="faultitude"><img class="project-logo" src="logos/faultitude.svg" alt="" />Faultitude</a>
-          <a href="#wordaholic" data-tab="wordaholic"><img class="project-logo" src="logos/wordaholic.svg" alt="" />Wordaholic</a>
-          <a href="#spin-master" data-tab="spin-master"><img class="project-logo" src="logos/spin-master.svg" alt="" />Spin Master</a>
-        </nav>
+      <section id="faultitude" data-view="faultitude">
+            <h2>
+              <a href="https://github.com/IlyaVolvo/faultitude-papers"
+                ><img class="project-logo" src="logos/faultitude.svg" alt="" />Faultitude</a
+              >
+            </h2>
+            <p>Professional interest.</p>
 
-        <section id="faultitude" data-tab="faultitude">
-          <h2>
-            <a href="https://github.com/IlyaVolvo/faultitude-papers"><img class="project-logo" src="logos/faultitude.svg" alt="" />Faultitude</a>
-          </h2>
-          <p>Professional interest.</p>
-          <p>
-            Fault injection for Java applications. This is my attempt to build a
-            comprehensive source code aware fault injection platform. It is the
-            result of several years of analysis and research into the importance
-            of fault injection for large distributed systems at the high level of
-            product maturity. It is not a replacement for existing testing
-            techniques and tools but an additional tool for proving system resilience under
-            adverse conditions. I felt the necessity for such a tool while
-            working on a distributed storage system from 2007 to 2022. The
-            recognition of the fact that adverse conditions should be
-            reproducible in a reliable and repeatable form came later in the
-            development cycle. The system was working in the large lab but
-            failing infrequently in production under very suspicious and rare
-            circumstances. I suspect that many practioners could relate to this
-            observation.
-          </p>
-          <p>
-            I should address the inevitable AI question: what is its role in this
-            project? It is significant, I most likely would not be able to make
-            it happen alone and surely not in the time frame it was done. Of
-            course, I used UI to search for papers and products in the area of
-            interest. I used AI to draft technical documents and papers. The
-            papers were rigorously edited. But the ideas, the architecture and
-            the major design decisions are mine and mine only. A significant
-            portion of the code is handwritten but I used AI heavily in the areas
-            of bytecode generation.
-          </p>
-          <p>I hope it answers this inevitable question.</p>
-          <p>
-            The project is not complete. I have not yet implemented all the
-            features I planned. But I have implemented most of the core features
-            that are needed to prove the concept and actually use in many
-            important real-life productioncases. The platform is open in every sensible
-            direction: the idea is that engineers will add new application
-            specific features. Or may be general purpose ones that I missed.
-          </p>
-          <p>
-            The code is private. The paper and a Docker demo are public. The
-            README in the public repository explains the motivation behind the
-            decision to release documentation only. A live presentation with a
-            working demo of the platform is in this repo.
-          </p>
-          <p>
-            This platform is for Java only. That covers a lot of territory but clearly far from all. 
-            I am working on extending this idea into compiled languages. And possible interpretive languages.
-            My hope and desire is to have a single platform that can be used to test and prove resilience of any platform or language.
-            I need help and collaboration, contact me if you are interested.
-          </p>
-        </section>
-
-        <section id="wordaholic" data-tab="wordaholic">
-          <h2>
-            <a href="https://github.com/IlyaVolvo/wordaholic"><img class="project-logo" src="logos/wordaholic.svg" alt="" />Wordaholic</a>
-          </h2>
-          <p>Linguistic work, in the form of games.</p>
-          <p class="project-links">
-            <a href="https://github.com/IlyaVolvo/wordaholic">Repository</a>
-            ·
-            <a href="https://wordaholic-6rxd.onrender.com">Product</a>
-          </p>
-          <p>
-            Offline word games built around real languages and word lists. I
-            want to create a platform that maintains words from multiple languages,
-            with enough metadata to generate the desired word set based on the
-            game interest. It is far from complete. After trying to build my
-            own workflow to generate the desired word-list, I concluded that this
-            work should rely on extensive work already done. That is what I am
-            in the process of doing.
-          </p>
-          <p>Another bottleneck are the original ideas for games.</p>
-        </section>
-
-        <section id="spin-master" data-tab="spin-master">
-          <h2>
-            <a href="https://github.com/IlyaVolvo/spin-master"><img class="project-logo" src="logos/spin-master.svg" alt="" />Spin Master</a>
-          </h2>
-          <p>Web development practice, for a real club.</p>
-          <p class="project-links">
-            <a href="https://github.com/IlyaVolvo/spin-master">Repository</a>
-            ·
-            <a href="https://spin-master-staging.onrender.com">Staging</a>
-          </p>
-          <div class="demo-accounts">
+            <h3>What it is</h3>
             <p>
-              Player role
-              <span class="cred-label">user</span>
-              <span class="cred-value">demo.mc.smash@gmail.com</span>
-              <span class="cred-label">password</span>
-              <span class="cred-value">demo123</span>
+              Fault injection for Java applications. This is my attempt to build
+              a comprehensive source code aware fault injection platform. It is
+              the result of several years of analysis and research into the
+              importance of fault injection for large distributed systems at the
+              high level of product maturity. It is not a replacement for
+              existing testing techniques and tools but an additional instrument for
+              proving system resilience under adverse conditions.
             </p>
-              Administrator role
-              <span class="cred-label">user</span>
-              <span class="cred-value">demo.von.smash@gmail.com</span>
-              <span class="cred-label">password</span>
-              <span class="cred-value">demo123</span>
+            <p>
+              The code is private. The paper and a Docker demo are public. The
+              README in the public repository explains the motivation behind the
+              decision to release documentation only. A live presentation with a
+              working demo of the platform is in this repo.
             </p>
-          </div>
-          <p>
-            Table tennis: ratings, tournaments, ratings, history, statistics, payment plans, payments, check-ins/outs. 
-            Built to be used, not only to learn the stack. This is my first intrusion in the world of
-            web apps. Never ever did I do it before. It was a learning curve in
-            AI usage: the initial codebase was a complete garbage. It took me a
-            week to guide AI to a full system rearchitecture, and I realized
-            that nothing will replace the good design. Not yet at least. 
-            But AI has written 100% of code here under my constant supervision and guidenance. 
-            Ask me how it works and you would be suprised that I claim to be the autho.
+
+            <h3>Details and inspiration</h3>
+            <p>
+              I felt the necessity for such a tool while working on a
+              distributed storage system from 2007 to 2022. The recognition of
+              the fact that adverse conditions should be reproducible in a
+              reliable and repeatable form came later in the development cycle.
+              The system was working in the large lab environments but failing infrequently
+              in production under very suspicious and rare conditions. I
+              suspect that many practioners could relate to this observation.
             </p>
-            <p>The system is used in test mode in my table tennis club in Portland.
-          </p>
-        </section>
-      </div>
+            <p>
+              I should address the inevitable AI question: what is its role in
+              this project? It is significant, I most likely would not be able
+              to make it happen alone and surely not in the time frame it was
+              done. Of course, I used AI tools to search for papers and products in
+              the area of interest. I used AI to draft technical documents and
+              papers. The papers were rigorously edited. But the ideas, the
+              architecture and the major design decisions are mine and mine
+              only. A significant portion of the code is handwritten but I used AI tools
+              heavily in the areas of bytecode generation.
+            </p>
+
+            <h3>Future work and references</h3>
+            <p>
+              The project is not complete but functional. I have implemented most of the core
+              features needed to prove the concept and to use it in many important
+              real-life production cases. The platform is open in every sensible
+              direction: engineers can add application specific features, or
+              maybe general purpose ones that I missed.
+            </p>
+            <p>
+              This platform is for Java only. That covers a lot of territory but
+              clearly far from all. I am working on extending this idea into
+              compiled languages. And possible interpretive languages. My hope
+              is a single platform that can test and prove resilience of any
+              platform or language. I need help and collaboration.
+            </p>
+            <p class="project-links">
+              <a href="https://github.com/IlyaVolvo/faultitude-papers">Public repository</a>
+              ·
+              <a href="https://github.com/IlyaVolvo/faultitude-papers/blob/main/why-faultitude.pdf">Why Faultitude</a>
+              ·
+              <a href="https://github.com/IlyaVolvo/faultitude-papers/blob/main/faultitude-paper.pdf">Paper</a>
+              ·
+              <a href="https://github.com/IlyaVolvo/faultitude-papers/blob/main/faultitude-white-paper.pdf">White paper</a>
+              ·
+              <a href="https://github.com/IlyaVolvo/faultitude-papers/blob/main/faultitude-technical-product-brief.pdf">Product brief</a>
+            </p>
+      </section>
+
+      <section id="wordaholic" data-view="wordaholic">
+            <h2>
+              <a href="https://github.com/IlyaVolvo/wordaholic"
+                ><img class="project-logo" src="logos/wordaholic.svg" alt="" />Wordaholic</a
+              >
+            </h2>
+            <p>Linguistic work, in the form of games.</p>
+            <p class="project-links">
+              <a href="https://github.com/IlyaVolvo/wordaholic">Repository</a>
+              ·
+              <a href="https://wordaholic-6rxd.onrender.com">Product</a>
+            </p>
+
+            <div class="shots" aria-label="Wordaholic screenshots">
+              <figure>
+                <img src="screenshots/wordaholic-home.png" alt="Wordaholic world map and game buttons" />
+              </figure>
+              <figure>
+                <img src="screenshots/wordaholic-canada.png" alt="Canada language picker for English and French" />
+              </figure>
+              <figure>
+                <img src="screenshots/wordaholic-games.png" alt="PolyWordlot and TransWord game buttons" />
+              </figure>
+            </div>
+
+            <h3>Main idea</h3>
+            <p>
+              Offline word games built around real languages and word lists. I
+              want a platform that keeps words from many languages, with enough
+              metadata to generate the word set a game needs. It is far from
+              complete. After trying to build my own workflow for those lists, I
+              concluded this should rely on extensive work already done. That is
+              what I am in the process of doing. Another bottleneck are the
+              original ideas for games.
+            </p>
+
+            <h3>Implemented games</h3>
+            <ul>
+              <li>
+                <strong>PolyWordlot</strong> — a Wordle-style game across
+                languages, with daily and training play.
+              </li>
+              <li>
+                <strong>TransWord</strong> — word transformation ladders. You
+                change one word into another, step by step.
+              </li>
+            </ul>
+      </section>
+
+      <section id="spin-master" data-view="spin-master">
+            <h2>
+              <a href="https://github.com/IlyaVolvo/spin-master"
+                ><img class="project-logo" src="logos/spin-master.svg" alt="" />Spin Master</a
+              >
+            </h2>
+            <p>Web development practice, for a real club.</p>
+            <p class="project-links">
+              <a href="https://github.com/IlyaVolvo/spin-master">Repository</a>
+              ·
+              <a href="https://spin-master-staging.onrender.com">Staging</a>
+            </p>
+            <div class="demo-accounts">
+              <p>
+                Player role
+                <span class="cred-label">user</span>
+                <span class="cred-value">demo.mc.smash@gmail.com</span>
+                <span class="cred-label">password</span>
+                <span class="cred-value">demo123</span>
+              </p>
+              <p>
+                Administrator role
+                <span class="cred-label">user</span>
+                <span class="cred-value">demi.von.smash@gmail.com</span>
+                <span class="cred-label">password</span>
+                <span class="cred-value">demo123</span>
+              </p>
+            </div>
+
+            <div class="shots" aria-label="Spin Master screenshots">
+              <figure>
+                <img src="screenshots/spin-master-login.png" alt="Spin Master staging login" />
+              </figure>
+              <figure>
+                <img src="screenshots/spin-master-player.png" alt="Player home in Spin Master" />
+              </figure>
+              <figure>
+                <img src="screenshots/spin-master-player-tournaments.png" alt="Player tournament list" />
+              </figure>
+              <figure>
+                <img src="screenshots/spin-master-admin.png" alt="Administrator view in Spin Master" />
+              </figure>
+            </div>
+
+            <h3>Purpose and experience</h3>
+            <p>
+              Table tennis: ratings, tournaments, history, statistics, payment
+              plans, payments, check-ins and check-outs. Built to be used, not
+              only to learn the stack. This is my first intrusion in the world
+              of web apps. Never ever did I do it before. It was a learning
+              curve in AI usage: the initial codebase was a complete garbage. It
+              took me a week to guide AI to a full system rearchitecture, and I
+              realized that nothing will replace the good design. Not yet at
+              least. AI has written 100% of the code here under my constant
+              supervision and guidance.
+            </p>
+
+            <h3>How I plan to use it</h3>
+            <p>
+              The system is in test mode at my table tennis club in Portland. I
+              want it to run a real club night: check-in, ratings, tournaments.
+              If it holds up there, I want other clubs to be able to use it too.
+            </p>
+      </section>
+
+      <section id="contact" data-view="contact">
+        <h1>Contact</h1>
+        <p>
+          If you want to talk about Faultitude, word lists, or the club app,
+          write to me.
+        </p>
+        <p>
+          <a href="mailto:ilya@volvovski.com">Mail</a><br />
+          <a href="https://github.com/IlyaVolvo">See me on Github</a>
+        </p>
+      </section>
     </main>
-    <script src="tabs.js"></script>
+    <script src="site.js"></script>
   </body>
 </html>

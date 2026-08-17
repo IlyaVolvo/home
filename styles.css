@@ -3,11 +3,16 @@
   --text: #1a1a1a;
   --muted: #555;
   --link: #1a1a1a;
-  --max: 48rem;
+  --line: #ddd;
+  --max: 52rem;
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -19,16 +24,118 @@ body {
   background: #fafafa;
 }
 
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #fafafa;
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header-inner,
 main {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 3rem 1.25rem 4rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+}
+
+.site-nav > a,
+.nav-drop summary {
+  text-decoration: none;
+  color: var(--muted);
+  font: inherit;
+  cursor: pointer;
+}
+
+.site-nav > a:hover,
+.nav-drop summary:hover,
+.site-nav > a[aria-current="page"],
+.nav-drop.is-active summary {
+  color: var(--text);
+}
+
+.nav-drop {
+  position: relative;
+}
+
+.nav-drop summary {
+  list-style: none;
+}
+
+.nav-drop summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-drop-list {
+  position: absolute;
+  top: calc(100% + 0.45rem);
+  left: 0;
+  min-width: 12rem;
+  padding: 0.4rem 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.nav-drop-list a {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem;
+  border-left: 3px solid transparent;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.nav-drop-list a:hover,
+.nav-drop-list a[aria-current="page"] {
+  background: #1b2a4a;
+  border-left-color: #d3202a;
+  color: #fff;
+}
+
+.nav-sub {
+  padding: 0 0 0.25rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 0.25rem;
+}
+
+.nav-sub a {
+  padding-left: 2.2rem;
+  font-size: 0.92em;
+  color: var(--muted);
+}
+
+.nav-sub a:hover {
+  background: #e8eef1;
+  border-left-color: #1b2a4a;
+  color: #1b2a4a;
+}
+
+main {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
 }
 
 h1 {
   font-size: 1.6rem;
   font-weight: 600;
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.75rem;
 }
 
 h2 {
@@ -37,43 +144,25 @@ h2 {
   margin: 0 0 0.4rem;
 }
 
-header p,
-section p {
-  margin: 0 0 0.6rem;
-}
-
-header {
-  margin-bottom: 2.25rem;
-}
-
-header .intro {
-  margin-top: 1.15rem;
-  color: var(--text);
-}
-
-.projects {
-  margin-bottom: 2.25rem;
-}
-
-.tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem;
-  margin: 0 0 1.5rem;
-  padding: 0;
-  border-bottom: 1px solid #ddd;
-}
-
-.tabs a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-bottom: -1px;
-  padding: 0.35rem 0;
-  border-bottom: 2px solid transparent;
-  text-decoration: none;
+h3 {
+  font-size: 1.02rem;
   font-weight: 600;
-  color: var(--muted);
+  margin: 1.15rem 0 0.4rem;
+}
+
+p,
+.demo-accounts,
+.shots,
+ul {
+  margin: 0 0 0.7rem;
+}
+
+[data-view] {
+  scroll-margin-top: 4rem;
+}
+
+html.is-enhanced [data-view]:not(.is-on) {
+  display: none;
 }
 
 .project-logo {
@@ -88,33 +177,40 @@ h2 a {
   gap: 0.45rem;
 }
 
-.tabs a[aria-selected="true"] {
-  color: var(--text);
-  border-bottom-color: var(--text);
-}
-
-.tabs a:hover {
-  color: var(--text);
-}
-
-section {
-  margin-bottom: 1.75rem;
-}
-
-.projects section {
-  margin-bottom: 0;
-}
-
-section > p:first-of-type {
+[data-view] > p:first-of-type {
   color: var(--muted);
+}
+
+#about > p:first-of-type,
+#contact > p:first-of-type {
+  color: var(--text);
 }
 
 .project-links {
   font-size: 0.95rem;
 }
 
+.shots {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.shots figure {
+  margin: 0;
+}
+
+.shots img {
+  display: block;
+  width: 100%;
+  height: 10.5rem;
+  object-fit: cover;
+  object-position: top;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
 .demo-accounts {
-  margin: 0 0 0.85rem;
   font-size: 0.95rem;
 }
 
@@ -123,6 +219,7 @@ section > p:first-of-type {
   flex-wrap: wrap;
   align-items: baseline;
   gap: 0.35rem 0.55rem;
+  margin: 0 0 0.4rem;
 }
 
 .cred-label {
@@ -148,10 +245,15 @@ a {
 }
 
 ul {
-  margin: 0;
   padding-left: 1.2rem;
 }
 
 li {
   margin-bottom: 0.4rem;
+}
+
+@media (max-width: 36rem) {
+  .shots {
+    grid-template-columns: 1fr;
+  }
 }
