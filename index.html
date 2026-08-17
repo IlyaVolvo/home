@@ -5,12 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Ilya Volvovski</title>
     <link rel="canonical" href="https://www.volvovski.com/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
-      <div class="site-header-inner">
-        <nav class="site-nav" aria-label="Site">
+      <div class="header-brand-row">
+        <a class="brand" href="#about">Ilya Volvovski</a>
+      </div>
+      <nav class="site-nav" aria-label="Site">
           <a href="#about" data-nav="about">About</a>
           <details class="nav-drop">
             <summary>Projects</summary>
@@ -33,8 +41,7 @@
             </div>
           </details>
           <a href="#contact" data-nav="contact">Contact</a>
-        </nav>
-      </div>
+      </nav>
     </header>
 
     <main>
@@ -83,6 +90,7 @@
             </h2>
             <p>Professional interest.</p>
 
+            <div class="project-block">
             <h3>What it is</h3>
             <p>
               Fault injection for Java applications. This is my attempt to build
@@ -99,7 +107,9 @@
               decision to release documentation only. A live presentation with a
               working demo of the platform is in this repo.
             </p>
+            </div>
 
+            <div class="project-block">
             <h3>Details and inspiration</h3>
             <p>
               I felt the necessity for such a tool while working on a
@@ -116,12 +126,14 @@
               to make it happen alone and surely not in the time frame it was
               done. Of course, I used AI tools to search for papers and products in
               the area of interest. I used AI to draft technical documents and
-              papers. The papers were rigorously edited. But the ideas, the
+              papers. The papers were rigorously edited. The ideas, the
               architecture and the major design decisions are mine and mine
-              only. A significant portion of the code is handwritten but I used AI tools
+              only. A significant portion of the code is handwritten. I used AI tools
               heavily in the areas of bytecode generation.
             </p>
+            </div>
 
+            <div class="project-block">
             <h3>Future work and references</h3>
             <p>
               The project is not complete but functional. I have implemented most of the core
@@ -148,9 +160,12 @@
               ·
               <a href="https://github.com/IlyaVolvo/faultitude-papers/blob/main/faultitude-technical-product-brief.pdf">Product brief</a>
             </p>
+            </div>
       </section>
 
       <section id="wordaholic" data-view="wordaholic">
+        <div class="project-split">
+          <div class="project-copy">
             <h2>
               <a href="https://github.com/IlyaVolvo/wordaholic"
                 ><img class="project-logo" src="logos/wordaholic.svg" alt="" />Wordaholic</a
@@ -163,29 +178,21 @@
               <a href="https://wordaholic-6rxd.onrender.com">Product</a>
             </p>
 
-            <div class="shots" aria-label="Wordaholic screenshots">
-              <figure>
-                <img src="screenshots/wordaholic-home.png" alt="Wordaholic world map and game buttons" />
-              </figure>
-              <figure>
-                <img src="screenshots/wordaholic-canada.png" alt="Canada language picker for English and French" />
-              </figure>
-              <figure>
-                <img src="screenshots/wordaholic-games.png" alt="PolyWordlot and TransWord game buttons" />
-              </figure>
-            </div>
-
+            <div class="project-block">
             <h3>Main idea</h3>
             <p>
               Offline word games built around real languages and word lists. I
-              want a platform that keeps words from many languages, with enough
+              want a platform that keeps words from many languages with enough
               metadata to generate the word set a game needs. It is far from
               complete. After trying to build my own workflow for those lists, I
               concluded this should rely on extensive work already done. That is
               what I am in the process of doing. Another bottleneck are the
               original ideas for games.
             </p>
+            <p>The collaborations in this area are welcome. Please contact me if you are interested.</p>
+            </div>
 
+            <div class="project-block">
             <h3>Implemented games</h3>
             <ul>
               <li>
@@ -197,9 +204,25 @@
                 change one word into another, step by step.
               </li>
             </ul>
+            </div>
+          </div>
+          <aside class="project-shots" aria-label="Wordaholic screenshots">
+            <button type="button" class="shot" data-shot="screenshots/wordaholic1.svg">
+              <img src="screenshots/wordaholic1.svg" alt="Wordaholic map with Canada language picker" />
+            </button>
+            <button type="button" class="shot" data-shot="screenshots/wordaholic2.svg">
+              <img src="screenshots/wordaholic2.svg" alt="PolyWordlot game board" />
+            </button>
+            <button type="button" class="shot" data-shot="screenshots/wordaholic3.svg">
+              <img src="screenshots/wordaholic3.svg" alt="TransWord word ladder" />
+            </button>
+          </aside>
+        </div>
       </section>
 
       <section id="spin-master" data-view="spin-master">
+        <div class="project-split">
+          <div class="project-copy">
             <h2>
               <a href="https://github.com/IlyaVolvo/spin-master"
                 ><img class="project-logo" src="logos/spin-master.svg" alt="" />Spin Master</a
@@ -228,25 +251,11 @@
               </p>
             </div>
 
-            <div class="shots" aria-label="Spin Master screenshots">
-              <figure>
-                <img src="screenshots/spin-master-login.png" alt="Spin Master staging login" />
-              </figure>
-              <figure>
-                <img src="screenshots/spin-master-player.png" alt="Player home in Spin Master" />
-              </figure>
-              <figure>
-                <img src="screenshots/spin-master-player-tournaments.png" alt="Player tournament list" />
-              </figure>
-              <figure>
-                <img src="screenshots/spin-master-admin.png" alt="Administrator view in Spin Master" />
-              </figure>
-            </div>
-
+            <div class="project-block">
             <h3>Purpose and experience</h3>
             <p>
               Table tennis: ratings, tournaments, history, statistics, payment
-              plans, payments, check-ins and check-outs. Built to be used, not
+              plans, payment transactions, check-ins and check-outs. Built to be used, not
               only to learn the stack. This is my first intrusion in the world
               of web apps. Never ever did I do it before. It was a learning
               curve in AI usage: the initial codebase was a complete garbage. It
@@ -255,13 +264,35 @@
               least. AI has written 100% of the code here under my constant
               supervision and guidance.
             </p>
+            </div>
 
+            <div class="project-block">
             <h3>How I plan to use it</h3>
             <p>
               The system is in test mode at my table tennis club in Portland. I
               want it to run a real club night: check-in, ratings, tournaments.
               If it holds up there, I want other clubs to be able to use it too.
             </p>
+            </div>
+          </div>
+          <aside class="project-shots" aria-label="Spin Master screenshots">
+            <button type="button" class="shot" data-shot="screenshots/spin-master1.svg">
+              <img src="screenshots/spin-master1.svg" alt="Spin Master players list" />
+            </button>
+            <button type="button" class="shot" data-shot="screenshots/spin-master2.svg">
+              <img src="screenshots/spin-master2.svg" alt="Spin Master payment log" />
+            </button>
+            <button type="button" class="shot" data-shot="screenshots/spin-master3.svg">
+              <img src="screenshots/spin-master3.svg" alt="Spin Master completed tournament standings" />
+            </button>
+            <button type="button" class="shot" data-shot="screenshots/spin-master4.svg">
+              <img src="screenshots/spin-master4.svg" alt="Spin Master playoff bracket" />
+            </button>
+            <button type="button" class="shot" data-shot="screenshots/spin-master5.svg">
+              <img src="screenshots/spin-master5.svg" alt="Spin Master club achievements" />
+            </button>
+          </aside>
+        </div>
       </section>
 
       <section id="contact" data-view="contact">
@@ -271,11 +302,14 @@
           write to me.
         </p>
         <p>
-          <a href="mailto:ilya@volvovski.com">Mail</a><br />
+          <a href="mailto:ilya@volvovski.com">ilya@volvovski.com</a><br />
           <a href="https://github.com/IlyaVolvo">See me on Github</a>
         </p>
       </section>
     </main>
+    <dialog class="shot-pop" aria-label="Screenshot">
+      <img alt="" />
+    </dialog>
     <script src="site.js"></script>
   </body>
 </html>
