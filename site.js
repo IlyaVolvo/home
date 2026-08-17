@@ -53,4 +53,35 @@
 
   window.addEventListener("hashchange", () => show(idFromHash()));
   window.addEventListener("popstate", () => show(idFromHash()));
+
+  const pop = document.querySelector(".shot-pop");
+  const popImg = pop && pop.querySelector("img");
+  if (pop && popImg) {
+    function openShot(src, alt) {
+      popImg.alt = alt || "";
+      popImg.removeAttribute("width");
+      popImg.removeAttribute("height");
+      const showAtCaptureSize = () => {
+        popImg.width = popImg.naturalWidth;
+        popImg.height = popImg.naturalHeight;
+        if (!pop.open) pop.showModal();
+      };
+      if (popImg.src.endsWith(src) && popImg.complete && popImg.naturalWidth) {
+        showAtCaptureSize();
+        return;
+      }
+      popImg.onload = showAtCaptureSize;
+      popImg.src = src;
+    }
+
+    document.addEventListener("click", (event) => {
+      const shot = event.target.closest("[data-shot]");
+      if (shot) {
+        event.preventDefault();
+        openShot(shot.getAttribute("data-shot"), shot.querySelector("img")?.alt);
+        return;
+      }
+      if (event.target === pop) pop.close();
+    });
+  }
 })();
