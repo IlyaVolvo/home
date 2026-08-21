@@ -1,6 +1,7 @@
 :root {
-  --bg: #ffffff;
-  --bg-soft: #f4f4f4;
+  --bg: #efece6;
+  --bg-soft: #e4e0d8;
+  --paper: #faf8f4;
   --text: #111111;
   --muted: #3a3a3a;
   --link: #143a7a;
@@ -21,6 +22,7 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--bg);
 }
 
 body {
@@ -32,7 +34,12 @@ body {
   line-height: 1.5;
   letter-spacing: 0.01em;
   color: var(--text);
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 90% 55% at 50% -8%, rgba(255, 255, 255, 0.72), transparent 58%),
+    radial-gradient(ellipse 55% 40% at 0% 100%, rgba(20, 58, 122, 0.07), transparent 58%),
+    radial-gradient(ellipse 50% 38% at 100% 92%, rgba(211, 32, 42, 0.06), transparent 55%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28'%3E%3Ccircle cx='1.2' cy='1.2' r='0.7' fill='%23111111' fill-opacity='0.07'/%3E%3C/svg%3E");
 }
 
 img {
@@ -201,7 +208,7 @@ h3 {
 }
 
 .project-block {
-  background: var(--bg);
+  background: var(--paper);
   color: var(--text);
   margin: 0 0 1.25rem;
 }
@@ -237,12 +244,14 @@ li {
 }
 
 [data-view] > p:first-of-type,
-.project-copy > p:first-of-type {
+.project-copy > p:first-of-type,
+.project-lead p {
   color: var(--muted);
 }
 
 #about > p:first-of-type,
-#contact > p:first-of-type {
+#contact > p:first-of-type,
+#about .project-lead p {
   color: var(--text);
 }
 
@@ -260,20 +269,44 @@ html.is-enhanced [data-view]:not(.is-on) {
   object-fit: contain;
 }
 
+.project-lead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 0 1rem;
+}
+
+.project-lead p {
+  margin: 0;
+}
+
+.project-mark {
+  flex-shrink: 0;
+  display: block;
+  line-height: 0;
+}
+
+.project-mark img {
+  width: 3.5rem;
+  height: 3.5rem;
+  object-fit: contain;
+}
+
 h2 a {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
 }
 
-main a:not(h2 a) {
+main a:not(h2 a):not(.project-mark) {
   color: var(--link);
   text-decoration: underline;
   text-decoration-color: var(--link);
   text-underline-offset: 0.2em;
 }
 
-main a:hover {
+main a:hover:not(.project-mark) {
   color: #0c2450;
   text-decoration-color: #0c2450;
 }
@@ -282,14 +315,14 @@ main a:hover {
   font-size: var(--text-size);
 }
 
-#faultitude a {
+#faultitude a:not(.project-mark) {
   color: var(--link);
   text-decoration: underline;
   text-decoration-color: var(--link);
   text-underline-offset: 0.2em;
 }
 
-#faultitude a:hover {
+#faultitude a:not(.project-mark):hover {
   color: #0c2450;
   text-decoration-color: #0c2450;
 }
